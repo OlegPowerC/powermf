@@ -1,0 +1,40 @@
+{
+  "ldap_setting":{
+    "fqdn":"dc01",
+    "ldap_port":389,
+    "base_dn":"dc=example,dc=local",
+    "bind_username_upn":"admin@example.local",
+    "bind_password":"P@ssw0rd",
+    "otp_group":"CN=ADM-VPN,CN=Users,DC=EXAMPLE,DC=LOCAL"
+  },
+  "radius_setting":{
+    "shared_secret":"TestRadPassword"
+  },
+  "syslog_params":{
+    "address":"127.0.0.1",
+    "port": 514
+  },
+  "otp_params":{
+    "valid_interval":30,
+    "otp_len": 6,
+    "otp_key_encrypt": "KeyEnc"
+  },
+  "smtp_params":{
+    "mail_from":"testm@example.ru",
+    "mail_from_name":"LArañiaOTP",
+    "smtpserver":"192.168.0.25",
+    "SMTPPort":25,
+    "subject":"Your OTP",
+    "message":"OTP valid until  30 sec",
+    "smtp_password":""
+  },
+
+  "sms_inplat_params":{
+    "smsurl":"https://pay.inplat.ru/smsc/send_sms?msisdn",
+    "smscert": "prod.crt",
+    "smskey": "2023.key",
+    "message":"OTP valid until 30 sec",
+    "smsca":"",
+    "checkidentity": 1
+  }
+}
