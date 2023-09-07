@@ -8,7 +8,9 @@
     "otp_group":"CN=ADM-VPN,CN=Users,DC=EXAMPLE,DC=LOCAL"
   },
   "radius_setting":{
-    "shared_secret":"TestRadPassword"
+    "shared_secret":"TestRadPassword",
+    "port": 1812,
+    "address": ""
   },
   "syslog_params":{
     "address":"127.0.0.1",
