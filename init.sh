@@ -1,5 +1,5 @@
 #!/bin/sh
-mkdir log
+mkdir logs
 mkdir lic
 mkdir inplatcerts
 chmod +x PowerMF

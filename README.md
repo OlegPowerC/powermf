@@ -70,3 +70,13 @@
 **./init.sh**
 
 Дождаться появления информации о лицензии и сохранить ее
+
+После получения файла license.dat скопировать его в папку lic
+
+Для запуска как сервис включить сервис
+
+**systemctl enable /opt/powermf/powermf.service**
+
+Запустить
+
+**service powermf start**
