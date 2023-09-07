@@ -48,7 +48,7 @@
 ## Установка
 Перейти в папку /opt
 выполнить:
-#### git clone git clone https://github.com/OlegPowerC/powermf.git
+#### git clone https://github.com/OlegPowerC/powermf.git
 перейти в папку **powermf**
 сделать исполняемым файл init.sh:
 **cmod +x ./init.sh**
