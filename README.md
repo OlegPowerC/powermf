@@ -80,3 +80,9 @@
 Запустить
 
 **service powermf start**
+
+Разрешить принимать дейтаграммы на нужный порт в файрволе
+
+**firewall-cmd --zone=public --permanent --add-port=1812/udp**
+
+**firewall-cmd --reload**
