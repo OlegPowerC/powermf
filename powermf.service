@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/opt/powermf
-ExecStart=/opt/syslogcollector/PowerMF
+ExecStart=/opt/powermf/PowerMF
 Restart=on-failure
 # Other Restart options: or always, on-abort, etc
 
