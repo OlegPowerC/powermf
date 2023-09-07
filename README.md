@@ -52,11 +52,21 @@
 
 ## Установка
 Перейти в папку /opt
+
+**cd /opt**
+
 выполнить:
 #### git clone https://github.com/OlegPowerC/powermf.git
-перейти в папку **powermf**
-сделать исполняемым файл init.sh:
-**cmod +x ./init.sh**
+перейти в папку powermf
+
+**cd powermf**
+
+сделать исполняемым файл init.sh
+
+**chmod +x ./init.sh**
+
 и выполнить его
+
 **./init.sh**
+
 Дождаться появления информации о лицензии и сохранить ее
