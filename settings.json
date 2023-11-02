@@ -31,11 +31,15 @@
     "smtp_password":""
   },
 
-  "sms_inplat_params":{
+  "sms_params":{
     "smsurl":"https://pay.inplat.ru/smsc/send_sms?msisdn",
     "smscert": "prod.crt",
     "smskey": "2023.key",
     "message":"OTP valid until 30 sec",
+    "smslogin":"",
+    "smspassword":"",
+    "authbycert": 0,
+    "json": 0,
     "smsca":"",
     "checkidentity": 1
   }
