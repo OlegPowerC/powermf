@@ -1,14 +1,14 @@
 {
   "ldap_setting":{
-    "fqdn":"dc01",
+    "fqdn":"192.168.0.1",
     "ldap_port":389,
-    "base_dn":"dc=example,dc=local",
+    "base_dn":"dc=examole,dc=local",
     "bind_username_upn":"admin@example.local",
-    "bind_password":"P@ssw0rd",
+    "bind_password":"test12345%",
     "otp_group":"CN=ADM-VPN,CN=Users,DC=EXAMPLE,DC=LOCAL"
   },
   "radius_setting":{
-    "shared_secret":"TestRadPassword",
+    "shared_secret":"Test327A",
     "port": 1812,
     "address": ""
   },
@@ -19,22 +19,29 @@
   "otp_params":{
     "valid_interval":30,
     "otp_len": 6,
-    "otp_key_encrypt": "KeyEnc"
+    "otp_key_encrypt": "Test12345%"
   },
   "smtp_params":{
-    "mail_from":"testm@example.ru",
+    "mail_from":"otp@example.com",
     "mail_from_name":"LArañiaOTP",
-    "smtpserver":"192.168.0.25",
+    "smtpserver":"192.168.0.7",
     "SMTPPort":25,
     "subject":"Your OTP",
     "message":"OTP valid until  30 sec",
     "smtp_password":""
   },
 
+  "blockuser_params":{
+    "attemps":3,
+    "intime_mins":5,
+    "blockfor_mins":5,
+    "enabled": 0
+  },
+
   "sms_params":{
     "smsurl":"https://pay.inplat.ru/smsc/send_sms?msisdn",
-    "smscert": "prod.crt",
-    "smskey": "2023.key",
+    "smscert": "cert.crt",
+    "smskey": "key.key",
     "message":"OTP valid until 30 sec",
     "smslogin":"",
     "smspassword":"",
