@@ -39,12 +39,12 @@
   },
 
   "sms_params":{
-    "smsurl":"https://pay.inplat.ru/smsc/send_sms?msisdn",
+    "smsurl":"https://api.iqsms.ru/messages/v2/send.json",
     "smscert": "cert.crt",
     "smskey": "key.key",
     "message":"OTP valid until 30 sec",
-    "smslogin":"",
-    "smspassword":"",
+    "smslogin":"testuser",
+    "smspassword":"testpassword",
     "authbycert": 0,
     "json": 0,
     "smsca":"",
