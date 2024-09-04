@@ -130,6 +130,7 @@
 
 ###  Пример настройки Active Directory
 
+![ad example image](https://github.com/OlegPowerC/powermf/blob/master/addata.png)
 
 
 ### Тест при использовании в качестве VPN шлюза, Cisco ASA
