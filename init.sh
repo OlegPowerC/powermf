@@ -1,6 +1,6 @@
 #!/bin/sh
 mkdir logs
 mkdir lic
-mkdir inplatcerts
+mkdir smscerts
 chmod +x PowerMF
 ./PowerMF
