@@ -101,3 +101,47 @@
 
 ### Утилита генерации секретного ключа для программного TOTP генератора
 Утилиты лежат в папке **tools** под windows и linux
+
+### Настройка шлюза VPN на примере Cisco ASA
+
+    laaa-server ADLDAP protocol ldap
+    aaa-server ADLDAP (inside) host 192.168.0.2
+    server-port 389
+    ldap-base-dn dc=EXAMPLE, dc=LOCAL
+    ldap-scope subtree
+    ldap-naming-attribute sAMAccountName
+    ldap-login-password TestPass123
+    ldap-login-dn cn=ASA, cn=Users, dc=EXAMPLE, dc=LOCAL
+    server-type microsoft
+    
+    aaa-server RDTEST protocol radius
+    aaa-server RDTEST (inside) host 192.168.0.5
+    key radiuskeytest123
+    authentication-port 1812
+    
+    tunnel-group TWTEST type remote-access
+    tunnel-group TWTEST general-attributes
+    authentication-server-group ADLDAP
+    secondary-authentication-server-group RDTEST use-primary-username
+
+В примере:
+192.168.0.2 - это адрес LDAP сервера
+192.168.0.5 - это адрес Linux хоста на котором запущен сервис PowerMF
+
+###  Пример настройки Active Directory
+
+
+
+### Тест при использовании в качестве VPN шлюза, Cisco ASA
+
+**test aaa-server authentication TWTEST_WIN host 192.168.0.5 username User password 123654**
+
+В случае указывания реального пользователя - члена группы указанной в параметре otp_group
+у которого есть токен (secretkey в поле info)
+и пароля сгенерированного генератором OTP в логе будет сообщение:
+
+INFO: Authentication Successful
+
+В случае указания неверного пароля, в логе будет:
+
+ERROR: Authentication Rejected: AAA failure
