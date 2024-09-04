@@ -135,7 +135,7 @@
 
 ### Тест при использовании в качестве VPN шлюза, Cisco ASA
 
-**test aaa-server authentication TWTEST_WIN host 192.168.0.5 username User password 123654**
+**test aaa-server authentication RDTEST host 192.168.0.5 username User password 123654**
 
 В случае указывания реального пользователя - члена группы указанной в параметре otp_group
 у которого есть токен (secretkey в поле info)
