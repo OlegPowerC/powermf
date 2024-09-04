@@ -1,52 +1,57 @@
 {
   "ldap_setting":{
-    "fqdn":"192.168.0.1",
+    "fqdn":"dc01.example.local",
+    "fqdn2":"192.168.1.2",
     "ldap_port":389,
-    "base_dn":"dc=examole,dc=local",
-    "bind_username_upn":"admin@example.local",
-    "bind_password":"test12345%",
-    "otp_group":"CN=ADM-VPN,CN=Users,DC=EXAMPLE,DC=LOCAL"
+    "ldaps_port":636,
+    "Ldaps_enabled":0,
+    "base_dn":"dc=example,dc=local",
+    "bind_username_upn":"otpuser@example.local",
+    "bind_password":"12345%6",
+    "otp_group":"CN=MAIN-VPN,CN=Users,DC=EXAMPLE,DC=LOCAL"
   },
   "radius_setting":{
-    "shared_secret":"Test327A",
+    "shared_secret":"presharedkey123",
     "port": 1812,
-    "address": ""
+    "address": "",
+    "ttimeotp": 0
   },
   "syslog_params":{
     "address":"127.0.0.1",
     "port": 514
   },
   "otp_params":{
-    "valid_interval":30,
+    "valid_interval":60,
     "otp_len": 6,
-    "otp_key_encrypt": "Test12345%"
+    "otp_key_encrypt": "Adencrypt12345%"
   },
+
+  "blockuser_params":{
+    "attemps":3,
+    "intime_mins":5,
+    "blockfor_mins":15,
+    "enabled": 0
+  },
+
   "smtp_params":{
-    "mail_from":"otp@example.com",
-    "mail_from_name":"LArañiaOTP",
-    "smtpserver":"192.168.0.7",
+    "mail_from":"powermf@example.local",
+    "mail_from_name":"PowerMF",
+    "smtpserver":"192.168.0.20",
     "SMTPPort":25,
     "subject":"Your OTP",
     "message":"OTP valid until  30 sec",
     "smtp_password":""
   },
 
-  "blockuser_params":{
-    "attemps":3,
-    "intime_mins":5,
-    "blockfor_mins":5,
-    "enabled": 0
-  },
-
   "sms_params":{
     "smsurl":"https://api.iqsms.ru/messages/v2/send.json",
-    "smscert": "cert.crt",
-    "smskey": "key.key",
-    "message":"OTP valid until 30 sec",
-    "smslogin":"testuser",
-    "smspassword":"testpassword",
+    "smscert": "",
+    "smskey": "",
+    "message":"OTP valid until 50 sec",
+    "smslogin":"smsdiscountuser",
+    "smspassword":"1234560",
     "authbycert": 0,
-    "json": 0,
+    "json": 1,
     "smsca":"",
     "checkidentity": 1
   }
