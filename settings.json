@@ -1,17 +1,21 @@
 {
   "ldap_setting":{
     "fqdn":"dc01.example.local",
-    "fqdn2":"192.168.1.2",
+    "fqdn2":"dc02.example.local",
     "ldap_port":389,
     "ldaps_port":636,
-    "Ldaps_enabled":0,
+    "Ldaps_enabled":1,
     "base_dn":"dc=example,dc=local",
-    "bind_username_upn":"otpuser@example.local",
-    "bind_password":"12345%6",
-    "otp_group":"CN=MAIN-VPN,CN=Users,DC=EXAMPLE,DC=LOCAL"
+    "bind_username_upn":"admin@example.local",
+    "bind_password":"Password123",
+    "otp_group":"CN=OTP-VPN,CN=Users,DC=example,DC=LOCAL",
+    "a_phone_attr":"extensionAttribute6",
+    "a_mail_attr":"extensionAttribute8",
+    "a_method_attr":"extensionAttribute5",
+    "otp_bypass_group":"CN=NOOTP-VPN,CN=Users,DC=example,DC=LOCAL"
   },
   "radius_setting":{
-    "shared_secret":"presharedkey123",
+    "shared_secret":"ShSecret123",
     "port": 1812,
     "address": "",
     "ttimeotp": 0
@@ -23,24 +27,26 @@
   "otp_params":{
     "valid_interval":60,
     "otp_len": 6,
-    "otp_key_encrypt": "Adencrypt12345%"
+    "otp_key_encrypt": "EnkKey123"
   },
 
   "blockuser_params":{
     "attemps":3,
     "intime_mins":5,
     "blockfor_mins":15,
-    "enabled": 0
+    "enabled": 1
   },
 
   "smtp_params":{
-    "mail_from":"powermf@example.local",
-    "mail_from_name":"PowerMF",
-    "smtpserver":"192.168.0.20",
-    "SMTPPort":25,
+    "mail_from":"testmailexloc123@yandex.ru",
+    "mail_from_name":"LArañiaOTP",
+    "smtpserver":"smtp.yandex.ru",
+    "smtpport":465,
     "subject":"Your OTP",
     "message":"OTP valid until  30 sec",
-    "smtp_password":""
+    "smtp_password":"smtppass123",
+    "domain": "yandex.ru",
+    "tls": 1
   },
 
   "sms_params":{
@@ -48,8 +54,8 @@
     "smscert": "",
     "smskey": "",
     "message":"OTP valid until 50 sec",
-    "smslogin":"smsdiscountuser",
-    "smspassword":"1234560",
+    "smslogin":"user01",
+    "smspassword":"12345",
     "authbycert": 0,
     "json": 1,
     "smsca":"",
