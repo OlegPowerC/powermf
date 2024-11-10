@@ -229,10 +229,10 @@ ERROR: Authentication Rejected: AAA failure
 
 Для проверки какие атрибуты будут использоваться, можно воспользоваться утилитой **testldap**
 **./testldap  -u User1**
-==============================================================================
-Пользователь User1 член группы CN=VTEST-VPN,CN=Users,DC=EXAMPLE,DC=LOCAL
-номер мобильного телефона (LDAP атрибут extensionAttribute6): +7XXXXXXX
-E-Mail (LDAP атрибут extensionAttribute8): user1@example.local
-Метод доставки сообщения (параметр в атрибуте extensionAttribute5): SMS на номер мобильного телефона
-==============================================================================
+
+    Пользователь User1 член группы CN=VTEST-VPN,CN=Users,DC=EXAMPLE,DC=LOCAL
+    номер мобильного телефона (LDAP атрибут extensionAttribute6): +7XXXXXXX
+    E-Mail (LDAP атрибут extensionAttribute8): user1@example.local
+    Метод доставки сообщения (параметр в атрибуте extensionAttribute5): SMS на номер мобильного телефона
+
 
