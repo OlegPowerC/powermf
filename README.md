@@ -228,8 +228,10 @@ ERROR: Authentication Rejected: AAA failure
 ### Инструменты тестирования
 
 Для проверки какие атрибуты будут использоваться, можно воспользоваться утилитой **testldap**
-**./testldap  -u User1**
+**./testldap  -u <Имя пользователя>**
+Пример
 
+    ./testldap  -u User1
     Пользователь User1 член группы CN=VTEST-VPN,CN=Users,DC=EXAMPLE,DC=LOCAL
     номер мобильного телефона (LDAP атрибут extensionAttribute6): +7XXXXXXX
     E-Mail (LDAP атрибут extensionAttribute8): user1@example.local
