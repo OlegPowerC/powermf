@@ -6,13 +6,15 @@
     "ldaps_port":636,
     "Ldaps_enabled":1,
     "base_dn":"dc=example,dc=local",
+    "username_attr": "sAMAccountName",
     "bind_username_upn":"admin@example.local",
     "bind_password":"Password123",
     "otp_group":"CN=OTP-VPN,CN=Users,DC=example,DC=LOCAL",
     "a_phone_attr":"extensionAttribute6",
     "a_mail_attr":"extensionAttribute8",
     "a_method_attr":"extensionAttribute5",
-    "otp_bypass_group":"CN=NOOTP-VPN,CN=Users,DC=example,DC=LOCAL"
+    "otp_bypass_group":"CN=NOOTP-VPN,CN=Users,DC=example,DC=LOCAL",
+    "fakepassword": "12345fakepassword"
   },
   "radius_setting":{
     "shared_secret":"ShSecret123",
