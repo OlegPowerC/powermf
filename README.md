@@ -159,7 +159,7 @@
     Encrypted secret key for LDAP info:
     secretkey_UvbX5Cmr2uUVRc9DoBfj7VgZBtNUiu5ejmJhxvb3iVmvicgyOK90my1jm4hGUiaj
     Secret key in Base32 format: I6BRAZTMGU4BJSVDAWV2KMASEUJWWHJJ             
-    QR code saved in: C:\Users\Tuser\Tools\anyuser.png
+    QR code saved in: C:\Users\Tuser\Tools\testuser.png
 
 ## Блокировка пользователя при попытке подбора OTP
 На данный момент существует возможность временной блокировки пользователя например на 15 минут, при нескольких подряд неуспешных попытках
