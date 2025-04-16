@@ -1,0 +1,9 @@
+{
+  "country_allowlist": "BY,RU",
+  "country_denylist": "",
+  "country_na_block":false,
+  "country_default_block":true,
+  "ip_allowlist": "",
+  "ip_denylist": "8.8.0.0/16",
+  "ip_default_block":false
+}

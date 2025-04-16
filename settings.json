@@ -4,7 +4,7 @@
     "fqdn2":"dc02.example.local",
     "ldap_port":389,
     "ldaps_port":636,
-    "Ldaps_enabled":1,
+    "Ldaps_enabled":true,
     "base_dn":"dc=example,dc=local",
     "username_attr": "sAMAccountName",
     "bind_username_upn":"admin@example.local",
@@ -14,13 +14,15 @@
     "a_mail_attr":"extensionAttribute8",
     "a_method_attr":"extensionAttribute5",
     "otp_bypass_group":"CN=NOOTP-VPN,CN=Users,DC=example,DC=LOCAL",
-    "fakepassword": "12345fakepassword"
+    "fakepassword": "12345fakepassword",
+    "nestedgroup" : false
   },
   "radius_setting":{
     "shared_secret":"ShSecret123",
     "port": 1812,
     "address": "",
-    "ttimeotp": 0
+    "ttimeotp": false,
+    "debuglevel": 0
   },
   "syslog_params":{
     "address":"127.0.0.1",
@@ -36,7 +38,10 @@
     "attemps":3,
     "intime_mins":5,
     "blockfor_mins":15,
-    "enabled": 1
+    "enabled": 1,
+    "listblockedusers": true,
+    "country_list": true,
+    "iplist": false
   },
 
   "smtp_params":{
@@ -48,7 +53,9 @@
     "message":"OTP valid until  30 sec",
     "smtp_password":"smtppass123",
     "domain": "yandex.ru",
-    "tls": 1
+    "plain": false,
+    "debuglevel": 0,
+    "tls": true
   },
 
   "sms_params":{
@@ -58,9 +65,9 @@
     "message":"OTP valid until 50 sec",
     "smslogin":"user01",
     "smspassword":"12345",
-    "authbycert": 0,
-    "json": 1,
+    "authbycert": false,
+    "json": true,
     "smsca":"",
-    "checkidentity": 1
+    "checkidentity": true
   }
 }
