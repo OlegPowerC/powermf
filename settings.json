@@ -15,6 +15,7 @@
     "a_method_attr":"extensionAttribute5",
     "otp_bypass_group":"CN=NOOTP-VPN,CN=Users,DC=example,DC=LOCAL",
     "fakepassword": "12345fakepassword",
+    "useonlyoneattr": false,
     "nestedgroup" : false
   },
   "radius_setting":{
@@ -45,29 +46,31 @@
   },
 
   "smtp_params":{
-    "mail_from":"testmailexloc123@yandex.ru",
-    "mail_from_name":"LArañiaOTP",
+    "enabled": true,
+    "mail_from":"testnotavalibleuser@yandex.ru",
+    "mail_from_name":"LArañiaTools",
     "smtpserver":"smtp.yandex.ru",
     "smtpport":465,
+    "username": "testnotavalibleuser@yandex.ru",
+    "smtp_password":"testpassword",
     "subject":"Your OTP",
     "message":"OTP valid until  30 sec",
-    "smtp_password":"smtppass123",
     "domain": "yandex.ru",
-    "plain": false,
-    "debuglevel": 0,
-    "tls": true
+    "tls":true,
+    "plain":false,
+    "connection_timeout_sec": 5,
+    "smtp_timeout_sec": 5,
+    "debuglevel":0
   },
 
   "sms_params":{
-    "smsurl":"https://api.iqsms.ru/messages/v2/send.json",
-    "smscert": "",
-    "smskey": "",
-    "message":"OTP valid until 50 sec",
-    "smslogin":"user01",
-    "smspassword":"12345",
-    "authbycert": false,
-    "json": true,
-    "smsca":"",
-    "checkidentity": true
+    "enabled": true,
+    "provider": "sms discount",
+    "message":"OTP valid until 30 sec",
+    "smslogin":"testlogin",
+    "smspassword":"testpassword",
+    "naming": "PowerC",
+    "connection_timeout_sec": 5,
+    "debuglevel": 0
   }
 }
