@@ -447,6 +447,118 @@ remote id - идентификатор сообщения у провайдер�
 
 ![ad example image](https://github.com/OlegPowerC/powermf/blob/master/addata.png)
 
+### Настройка Active Directory с помощью Powershell
+
+Создание пользователя:
+**$Username = "<имя пользователя>"
+$Password = ConvertTo-SecureString "<пароль>" -AsPlainText -Force
+$Name = "<Имя>"
+$OU = "<путь>"
+New-ADUser -Name $Name \`
+-SamAccountName $Username \`
+-UserPrincipalName "$Username@domain.local" \`
+-Path $OU \`
+-AccountPassword $Password \`
+-Enabled $true \`
+-PasswordNeverExpires $true \`
+-ChangePasswordAtLogon $false**
+
+Пример:
+
+    $Username = "asamfauser"
+    $Password = ConvertTo-SecureString "P@ssw0rd123" -AsPlainText -Force
+    $Name = "asamfauser"
+    $OU = "CN=Users,DC=example,DC=local"
+    
+    New-ADUser -Name $Name `
+               -SamAccountName $Username `
+    -UserPrincipalName "$Username@example.local" `
+               -Path $OU `
+    -AccountPassword $Password `
+               -Enabled $true `
+    -PasswordNeverExpires $true `
+    -ChangePasswordAtLogon $false
+
+Удаление пользователя:
+
+**Remove-ADUser -Identity "<имя пользователя>"**
+
+Пример:
+    
+    Remove-ADUser -Identity "asamfauser"
+
+Создание группы для, членам которой будет разрешено получать коды:
+
+**New-ADGroup -Name <имя группы> -Path <путь, куда добавить группу> -GroupCategory Security -GroupScope Global**
+
+Пример:
+
+    New-ADGroup -Name "VPNMFA" -Path "CN=Users,DC=EXAMPLE,DC=LOCAL" -GroupCategory Security -GroupScope Global
+
+Добавление пользователя в группу:
+
+**Add-ADGroupMember -Identity <имя группы> -Members <имя пользователя>**
+
+Пример:
+
+    Add-ADGroupMember -Identity "VPNMFA" -Members "Testuser"
+
+Просмотр атрибутов (перечислим конкретные):
+
+**Get-ADUser "<имя пользователя>" -Properties <список атрибутов через запятую>**
+
+Пример:
+
+    Get-ADUser "Testuser" -Properties Info,mobile,mail
+
+    DistinguishedName : CN=Testuser,CN=Users,DC=EXAMPLE,DC=LOCAL
+    Enabled           : True
+    GivenName         : Testuser
+    Info              : otpsms,secretkey_0000i00008g0000YVad0000000032xrOXVb10000_tVD600006nAeIVb00000000
+    mail              : Testuser@example.ru
+    mobile            : 8XXXXXXXXXX
+    Name              : Testuser
+    ObjectClass       : user
+    ObjectGUID        : 33527000-0000-4309-000-9522b0006000
+    SamAccountName    : Testuser
+    SID               : S-1-5-21-3510006000-2088588912-100075000-1000
+    Surname           :
+    UserPrincipalName : TESTUSER@EXAMPLE.LOCAL
+    
+
+Изменение/добавление атрибута:
+
+**Set-ADUser -Identity "<имя пользователя>" -Replace @{<атрибут>="<значение атрибута>";<атрибут>="<значение атрибута>"}**
+
+Пример:
+
+    Set-ADUser -Identity "Testuser" -replace @{mobile="+7XXXXXXXXXX"; mail="Testuser@example.com"}
+
+Очистка атрибута:
+
+**Set-ADUser -Identity "<имя пользователя>" -CLear <список атрибутов через запятую>**
+
+Пример:
+
+    Set-ADUser -Identity "Testuser" -Clear mobile,mail
+
+
+Удаление пользователя из группы:
+
+**Remove-ADGroupMember -Identity "<имя группы>" -Members "<имя пользователя>"**
+    
+    Remove-ADGroupMember -Identity "VPNMFA" -Members "Testuser"
+
+Получение списка пользователей, членов группы
+
+**Get-ADGroupMember -Identity "<имя группы>"**
+
+Пример:
+    
+    Get-ADGroupMember -Identity "VPNMFA"
+    
+    
+
 
 ### Тест при использовании в качестве VPN шлюза, Cisco ASA
 
