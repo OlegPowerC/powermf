@@ -450,18 +450,19 @@ remote id - идентификатор сообщения у провайдер�
 ### Настройка Active Directory с помощью Powershell
 
 Создание пользователя:
-**$Username = "<имя пользователя>"
-$Password = ConvertTo-SecureString "<пароль>" -AsPlainText -Force
-$Name = "<Имя>"
-$OU = "<путь>"
-New-ADUser -Name $Name \`
--SamAccountName $Username \`
--UserPrincipalName "$Username@domain.local" \`
--Path $OU \`
--AccountPassword $Password \`
--Enabled $true \`
--PasswordNeverExpires $true \`
--ChangePasswordAtLogon $false**
+
+    $Username = "<имя пользователя>"
+    $Password = ConvertTo-SecureString "<пароль>" -AsPlainText -Force
+    $Name = "<Имя>"
+    $OU = "<путь>"
+    New-ADUser -Name $Name \`
+    -SamAccountName $Username \`
+    -UserPrincipalName "$Username@domain.local" \`
+    -Path $OU \`
+    -AccountPassword $Password \`
+    -Enabled $true \`
+    -PasswordNeverExpires $true \`
+    -ChangePasswordAtLogon $false
 
 Пример:
 
@@ -487,7 +488,7 @@ New-ADUser -Name $Name \`
     
     Remove-ADUser -Identity "asamfauser"
 
-Создание группы для, членам которой будет разрешено получать коды:
+Создание группы, членам которой будет разрешено получать коды:
 
 **New-ADGroup -Name <имя группы> -Path <путь, куда добавить группу> -GroupCategory Security -GroupScope Global**
 
