@@ -455,13 +455,13 @@ remote id - идентификатор сообщения у провайдер�
     $Password = ConvertTo-SecureString "<пароль>" -AsPlainText -Force
     $Name = "<Имя>"
     $OU = "<путь>"
-    New-ADUser -Name $Name \`
-    -SamAccountName $Username \`
-    -UserPrincipalName "$Username@domain.local" \`
-    -Path $OU \`
-    -AccountPassword $Password \`
-    -Enabled $true \`
-    -PasswordNeverExpires $true \`
+    New-ADUser -Name $Name `
+    -SamAccountName $Username `
+    -UserPrincipalName "$Username@domain.local" `
+    -Path $OU `
+    -AccountPassword $Password `
+    -Enabled $true `
+    -PasswordNeverExpires $true `
     -ChangePasswordAtLogon $false
 
 Пример:
