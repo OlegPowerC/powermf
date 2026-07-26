@@ -70,6 +70,8 @@
     "smslogin":"testlogin",
     "smspassword":"testpassword",
     "naming": "PowerC",
+    "defaultcountrycode": 7,
+    "numbertotallen": 11,
     "connection_timeout_sec": 5,
     "debuglevel": 0
   }
