@@ -30,8 +30,11 @@
     "port": 514
   },
   "otp_params":{
-    "valid_interval":60,
     "otp_len": 6,
+    "valid_interval":60,
+    "totp_len": 6,
+    "totp_valid_interval": 30,
+    "totp_alg": "sha1",
     "otp_key_encrypt": "EnkKey123"
   },
 
