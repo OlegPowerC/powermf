@@ -425,12 +425,16 @@ PowerMF может использоваться как Radius сервер дл�
 Оба этих пункта избавят от блокировок учетных записей в службе каталога, по причине попытки их подбора.
 
 ## Установка
+### Установка из репозитоия Gitverse
 Перейти в папку /opt
 
     cd /opt
 
 Выполнить:
-#### git clone https://github.com/OlegPowerC/powermf.git
+
+    git clone https://gitverse.ru/PowerC/powermf.git
+
+
 Перейти в папку powermf
 
     cd powermf
@@ -461,6 +465,7 @@ PowerMF может использоваться как Radius сервер дл�
 
     firewall-cmd --zone=public --permanent --add-port=1812/udp
     firewall-cmd --reload
+
 
 ## Журналирование
 Основной журнал (radius.log) ведется в текстовый файл в папке ***logs***
