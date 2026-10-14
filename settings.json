@@ -14,15 +14,21 @@
     "a_mail_attr":"extensionAttribute8",
     "a_method_attr":"extensionAttribute5",
     "otp_bypass_group":"CN=NOOTP-VPN,CN=Users,DC=example,DC=LOCAL",
+    "wo_otp_group":"CN=PAUTH-POWERMF,CN=Users,DC=example,DC=LOCAL",
+    "wo_otp_group_policy_attr":"extensionAttribute9",
     "fakepassword": "12345fakepassword",
     "useonlyoneattr": false,
-    "nestedgroup" : false
+    "nestedgroup" : false,
+    "primaryauth" : true,
+    "silenterr": true,
+    "ldap_timeout": 5
   },
   "radius_setting":{
     "shared_secret":"ShSecret123",
     "port": 1812,
     "address": "",
     "ttimeotp": false,
+    "silentneterr": false,
     "debuglevel": 0
   },
   "syslog_params":{
@@ -51,7 +57,7 @@
   "smtp_params":{
     "enabled": true,
     "mail_from":"testnotavalibleuser@yandex.ru",
-    "mail_from_name":"LArañiaTools",
+    "mail_from_name":"PowerMF",
     "smtpserver":"smtp.yandex.ru",
     "smtpport":465,
     "username": "testnotavalibleuser@yandex.ru",
@@ -63,6 +69,8 @@
     "plain":false,
     "connection_timeout_sec": 5,
     "smtp_timeout_sec": 5,
+    "silenterr": false,
+    "verify_certificate": true,
     "debuglevel":0
   },
 
@@ -76,6 +84,8 @@
     "defaultcountrycode": 7,
     "numbertotallen": 11,
     "connection_timeout_sec": 5,
+    "silenterr": true,
+    "silenterrHTTP": true,
     "debuglevel": 0
   }
 }
